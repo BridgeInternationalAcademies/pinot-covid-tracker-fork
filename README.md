@@ -56,8 +56,10 @@ Sending request: http://172.23.0.4:9000/schemas to controller: af0a1b06cabb, ver
 {"status":"Table CovidCasesTracker_REALTIME succesfully added"}
 ```
 ### Access Apache Pinot
-Apache pinot can be accessed from port 9000. http://localhost:9000/.
+Apache pinot can be accessed from port 9000. http://localhost:9000/. And have a look at CovidCasesTracker table.
+![Solution Overview](images/2.png)
 
 ### Access Superset
-Apache Superset can be accessed from default port 8088.
+Apache Superset can be accessed from default port 8088. I have created a dashboard. You can create on your own.
+![Solution Overview](images/3.png)
 
