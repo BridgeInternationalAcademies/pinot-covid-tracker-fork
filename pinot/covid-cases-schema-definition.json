@@ -1,0 +1,86 @@
+{
+  "schemaName": "CovidCasesTrackerSchema",
+  "dimensionFieldSpecs": [
+    {
+      "name": "id",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "patientName",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "contactNumber",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "emailId",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "status",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "directContacts",
+      "dataType": "INT",
+      "defaultNullValue": 0
+    },
+    {
+      "name": "inDirectContacts",
+      "dataType": "INT",
+      "defaultNullValue": 0
+    },
+    {
+      "name": "city",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "state",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "patientStability",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "additionalInfo",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "notes",
+      "dataType": "STRING",
+      "defaultNullValue": ""
+    },
+    {
+      "name": "createdTime",
+      "dataType": "LONG",
+      "timeFormat" : "EPOCH",
+      "timeType": "MILLISECONDS"
+    }
+  ],
+  "metricFieldSpecs": [
+    {
+      "name": "changeLength",
+      "dataType": "INT",
+      "defaultNullValue": 0
+    }
+  ],
+  "timeFieldSpec": {
+    "incomingGranularitySpec": {
+      "name": "reportedTime",
+      "dataType": "LONG",
+      "timeFormat" : "EPOCH",
+      "timeType": "MILLISECONDS"
+    }
+  }
+}
