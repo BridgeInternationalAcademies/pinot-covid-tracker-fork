@@ -74,3 +74,4 @@ Apache Superset can be accessed from default port 8088. I have created a dashboa
 
 - Debugger for Java
 - Extension Pack for Java
+- (more)
