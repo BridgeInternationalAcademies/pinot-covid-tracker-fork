@@ -34,7 +34,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class KafkaConfig {
 
 	private final StreamBridge streamBridge;
-	private final ObjectMapper objectMapper;
+	
+	public KafkaConfig(StreamBridge streamBridge) {
+		this.streamBridge = streamBridge;
+	}
 
 	@Value("${spring.cloud.stream.bindings.eventProducer-out-0.content-type}")
 	private String streamOutMimeType;

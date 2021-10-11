@@ -35,6 +35,11 @@ public enum City {
 	RAJASTHAN_CITIES(State.RAJASTHAN.getState(), Stream.of("Jaipur", "Jodhpur", "Udaipur", "Ajmer", "Jaisalmer").collect(Collectors.toList())),
 	GUJARAT_CITIES(State.GUJARAT.getState(), Stream.of("Ahmedabad", "Surat", "Rajkot", "Vadodara", "Gandhinagar").collect(Collectors.toList()));
 
+	private City(String state, List<String> cities) {
+		this.state = state;
+		this.cities = cities;
+	}
+
 	private String state;
 	private List<String> cities;
 
@@ -47,4 +52,33 @@ public enum City {
 		}
 		return "UNKNOWN";
 	}
+
+    /**
+     * @param state the state to set
+     */
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * @param cities the cities to set
+     */
+    public void setCities(List<String> cities) {
+        this.cities = cities;
+    }
+
+	
+    /**
+     * @param state the state to set
+     */
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * @param cities the cities to set
+     */
+    public List<String> getCities() {
+        return this.cities;
+    }
 }

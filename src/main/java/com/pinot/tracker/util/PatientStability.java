@@ -19,6 +19,18 @@ public enum PatientStability {
 	SERIOUS("Serious"),
 	CRITICAL("Critical");
 
+	private PatientStability(String stability) {
+		this.setStability(stability);
+	}
+
+	public String getStability() {
+		return stability;
+	}
+
+	public void setStability(String stability) {
+		this.stability = stability;
+	}
+
 	private String stability;
 
 	public static PatientStability generatePatientStability() {

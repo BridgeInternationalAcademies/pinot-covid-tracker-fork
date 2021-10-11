@@ -29,6 +29,10 @@ public enum State {
 	RAJASTHAN("Rajasthan"),
 	GUJARAT("Gujarat");
 
+	private State(String state) {
+		this.state = state;
+	}
+
 	private String state;
 
 	public static State generateState() {
@@ -37,5 +41,19 @@ public enum State {
 		final Integer index = random.ints(0, (states.length - 1)).limit(1).findFirst().getAsInt();
 		return states[index];
 	}
+
+    /**
+     * @return String return the state
+     */
+    public String getState() {
+        return state;
+    }
+
+    /**
+     * @param state the state to set
+     */
+    public void setState(String state) {
+        this.state = state;
+    }
 
 }

@@ -28,6 +28,8 @@ services:
   pinot:
     image: apachepinot/pinot:0.6.0
     command: "QuickStart -type batch"
+    volumes:
+      - ./pinot:/pinot
     links:
       - kafka
       - zookeeper
