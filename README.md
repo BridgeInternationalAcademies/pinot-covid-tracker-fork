@@ -27,6 +27,8 @@ Several Dashboards are created using Apache Superset to visualize the data.
 - Java 11.
 - Apache Kafka (through docker).
 
+Note: Set %JavaHome%
+
 ### Set the Infrastructure using docker
 ``` shell
 $ docker-compose up -d
@@ -41,10 +43,6 @@ zookeeper                     /docker-entrypoint.sh zkSe ...   Up      0.0.0.0:2
 ### Create Table and Segments in Pinot
 In the application we have already had a folder `pinot` that had schema definition and index specification. The index type `star-tree` is created for pre-aggregation purposes.
 
-- Copy the pinot related data in to docker machine so we can exeute them inside docker
-``` shell
-cp ./pinot covid-tracker-pinot_pinot_1:.  
-```
 - Create table in Apache Pinot
 ``` shell
 docker exec covid-tracker-pinot_pinot_1 bin/pinot-admin.sh AddTable \                                          
