@@ -36,3 +36,10 @@ services:
     ports:
       - '9000:9000'
       - '8000:8000'
+
+  superset:
+    image: apachepinot/pinot-superset:latest
+    links:
+      - pinot
+    ports:
+      - '8088:8088'
