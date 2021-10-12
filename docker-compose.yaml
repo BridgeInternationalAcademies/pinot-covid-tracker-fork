@@ -38,7 +38,7 @@ services:
       - "8000:8000"
 
   superset:
-    image: super-pinot:latest
+    build: .
     links:
       - pinot
     ports:
