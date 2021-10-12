@@ -5,7 +5,7 @@ services:
     container_name: zookeeper
     image: zookeeper
     ports:
-      - '2181:2181'
+      - "2181:2181"
 
   # Install kafka and create needed topics.
   kafka:
@@ -13,8 +13,8 @@ services:
     image: confluentinc/cp-kafka
     hostname: kafka
     ports:
-      - '9092:9092'
-      - '29092:29092'
+      - "9092:9092"
+      - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -34,13 +34,12 @@ services:
       - kafka
       - zookeeper
     ports:
-      - '9000:9000'
-      - '8000:8000'
+      - "9000:9000"
+      - "8000:8000"
 
   superset:
-    image: apachepinot/pinot-superset:latest
-    command: bash -c "superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin && superset db upgrade && superset init && /usr/bin/docker-entrypoint.sh"
+    image: super-pinot:latest
     links:
       - pinot
     ports:
-      - '8088:8088'
+      - "8088:8088"

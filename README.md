@@ -60,18 +60,21 @@ Sending request: http://172.23.0.4:9000/schemas to controller: af0a1b06cabb, ver
 {"status":"Table CovidCasesTracker_REALTIME succesfully added"}
 ```
 
-### Access Apache Pinot
+## Access Apache Pinot
 
 Apache pinot can be accessed from port 9000. http://localhost:9000/. And have a look at CovidCasesTracker table.
 ![Solution Overview](images/2.png)
 
-### Access Superset
+## Apache Superset
 
-Apache Superset can be accessed from default port 8088. I have created a dashboard. You can create on your own.
-![Solution Overview](images/3.png)
+See the Dockerfile at repository root level directory where we add on to the `apache/superset:latest` superset image. The Dockerfile installs superset dependencies, configures admin login, updates and finally initializes and sets the entrypoint for the image. We then reference the image in the docker-compose.yaml.
 
-### VS Code Recommended Extensions
+#### Configuring a Database
+
+In Superset UI select Data menu > + Database link > use slqalchemy mssms connection string:
+`mssql+pymssql://superset:super_password@host.docker.internal:1433/Assessments-Dev`
+
+## VS Code Recommended Extensions
 
 - Debugger for Java
 - Extension Pack for Java
-- (more)
