@@ -65,6 +65,8 @@ Sending request: http://172.23.0.4:9000/schemas to controller: af0a1b06cabb, ver
 Apache pinot can be accessed from port 9000. http://localhost:9000/. And have a look at CovidCasesTracker table.
 ![Solution Overview](images/2.png)
 
+#### Pinot slqalchemy connection: `pinot://pinot:8000/query/sql?controller=http://pinot:9000/`
+
 ## Apache Superset
 
 See the Dockerfile at repository root level directory where we add on to the `apache/superset:latest` superset image. The Dockerfile installs superset dependencies, configures admin login, updates and finally initializes and sets the entrypoint for the image. We then reference the image in the docker-compose.yaml.
