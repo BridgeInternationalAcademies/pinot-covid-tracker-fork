@@ -26,7 +26,7 @@ services:
       - zookeeper
 
   pinot:
-    image: apachepinot/pinot:0.6.0
+    image: apachepinot/pinot:latest
     command: "QuickStart -type batch"
     volumes:
       - ./pinot:/pinot
@@ -38,8 +38,8 @@ services:
       - "8000:8000"
 
   superset:
-    build: .
-    command: bash -c "superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin && superset db upgrade && superset init && /usr/bin/docker-entrypoint.sh"
+    image: apache/superset:latest
+    command: bash -c "pip install pymssql && pip install pinotdb && superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin && superset db upgrade && superset init && /usr/bin/docker-entrypoint.sh"
     links:
       - pinot
     ports:
